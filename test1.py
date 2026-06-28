@@ -45,3 +45,7 @@ print(lyrics.count("l"))
 if(math.exp(1) % 3 != math.exp(1) // 2 ):
     print("exp(1) % 3 is equal to exp(1) // 2",math.exp(1)%3,math.exp(1) // 2)
 
+if(True):
+    print("True is true")
+else:
+    print("never prints this anyways")
