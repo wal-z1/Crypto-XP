@@ -17,3 +17,21 @@ def walid_func():
     return 1,2 ## returns a tuple
 
 print(walid_func())
+
+try:
+    print(1/0)
+except ZeroDivisionError as e:
+    print("error occured",e.__cause__)
+finally:
+    print("this will always run")
+
+lambda_func = lambda g: g**2
+
+print(lambda_func(4))
+
+numbers = [1,2,3,4,5,6,7,8,9]
+
+updated_numbers =list(filter(lambda x: x % 2 == 0,numbers))
+
+print(updated_numbers, type(updated_numbers))
+print(f'{updated_numbers} is a list of even numbers from {numbers}')
