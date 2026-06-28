@@ -49,3 +49,22 @@ if(True):
     print("True is true")
 else:
     print("never prints this anyways")
+
+list1 = [walid,"walid string"]
+print(list1,len(list1))
+list1.append("walid list")
+print(list1,len(list1))
+print(list1.pop(),len(list1))
+print(id(list1))
+
+y = list1[:]
+print(y,"here is the id",id(y))
+
+for i in y:
+    print(i)
+
+##slicer
+
+walid_slicer =[1,2,3,4,5,6,7,8,9]
+
+print(walid_slicer[::-1])
