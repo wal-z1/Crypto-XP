@@ -1,1 +1,4 @@
-print("idk man this is just a test file")
+import requests
+
+r = requests.get('https://google.com')
+print(r.text)
