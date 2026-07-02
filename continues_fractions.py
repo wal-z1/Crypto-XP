@@ -28,5 +28,11 @@ def convergents(cf):
     if len(cf) == 1:
         return [Fraction(cf[0], 1)]
     else:
-        for i in cf:
-            p_n, q_n = convergentcalc()
+        for i in range(len(cf)):
+            p_n, q_n = convergentcalc(cf[i],convs[i-1].numerator if i > 0 else 1,convs[i-1].denominator if i > 0 else 0,convs[i-2].numerator if i > 1 else 0,convs[i-2].denominator if i > 1 else 1)
+            convs.append(Fraction(p_n, q_n))
+
+    return convs
+
+print(continued_fraction(input_numerator=415, input_denominator=93))
+print(convergents(continued_fraction(input_numerator=415, input_denominator=93)))
