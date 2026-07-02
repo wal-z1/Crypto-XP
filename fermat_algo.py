@@ -1,4 +1,5 @@
 import math
+from sympy import isprime
 
 N = 31*91
 def fermat_factorization(n):
@@ -25,3 +26,4 @@ def fermat_factorization(n):
   return int(p), int(q)
 
 print(fermat_factorization(N))
+
