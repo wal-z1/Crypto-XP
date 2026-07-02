@@ -1,5 +1,5 @@
 from fractions import Fraction
-import math
+
 def continued_fraction(input_numerator, input_denominator):
     """Compute the continued fraction representation of a rational number."""
     cf = []
@@ -7,7 +7,10 @@ def continued_fraction(input_numerator, input_denominator):
     while True:
         integer_part = x.numerator // x.denominator
         cf.append(integer_part)
-        x = 1 / (x - integer_part)
+        remainder =  x - integer_part
+        if (remainder == 0):
+            break
+        x = 1 / (remainder)
         if x.denominator == 1:
             cf.append(x.numerator)
             break
@@ -29,10 +32,14 @@ def convergents(cf):
         return [Fraction(cf[0], 1)]
     else:
         for i in range(len(cf)):
-            p_n, q_n = convergentcalc(cf[i],convs[i-1].numerator if i > 0 else 1,convs[i-1].denominator if i > 0 else 0,convs[i-2].numerator if i > 1 else 0,convs[i-2].denominator if i > 1 else 1)
+            if i == 0:
+                p_n, q_n = convergentcalc(cf[i])
+            elif i == 1:
+                p_n, q_n = convergentcalc(cf[i],convs[i-1].numerator,convs[i-1].denominator,1,0)
+            else:
+                p_n, q_n = convergentcalc(cf[i],convs[i-1].numerator,convs[i-1].denominator,convs[i-2].numerator,convs[i-2].denominator)
+            print(f"Convergent {i}: {p_n}/{q_n}")
             convs.append(Fraction(p_n, q_n))
 
     return convs
 
-print(continued_fraction(input_numerator=415, input_denominator=93))
-print(convergents(continued_fraction(input_numerator=415, input_denominator=93)))
