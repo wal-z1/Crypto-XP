@@ -22,6 +22,8 @@ def continued_fraction():
     for a in reversed(cf[:-1]):
       expr = f"{a} + 1/({expr})"
     print(expr)
+    ## this prints like 1 + 1/(2 + 1/(3 + 1/4)) for [1,2,3,4]
+    ## the following steps : first it takes the last element of the list and then it takes the second last element and adds 1 over the last element and so on until it reaches the first element of the list.
 
 
 continued_fraction()
