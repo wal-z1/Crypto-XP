@@ -38,7 +38,7 @@ def convergents(cf):
                 p_n, q_n = convergentcalc(cf[i],convs[i-1].numerator,convs[i-1].denominator,1,0)
             else:
                 p_n, q_n = convergentcalc(cf[i],convs[i-1].numerator,convs[i-1].denominator,convs[i-2].numerator,convs[i-2].denominator)
-            print(f"Convergent {i}: {p_n}/{q_n}")
+           
             convs.append(Fraction(p_n, q_n))
 
     return convs
