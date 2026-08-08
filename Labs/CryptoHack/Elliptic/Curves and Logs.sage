@@ -1,3 +1,5 @@
+import hashlib
+
 p = 9739
 F = GF(p)
 E = EllipticCurve(F, [497, 1768])
@@ -8,3 +10,6 @@ Q_ab = nb * Q_a
 
 print(Q_ab)
 
+xQ = Q_ab.x()
+hash = hashlib.sha1(str(xQ).encode()).hexdigest()
+print(f'crypto{{{hash}}}')
