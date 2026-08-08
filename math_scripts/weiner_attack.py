@@ -1,4 +1,4 @@
-import continues_fractions
+import math_scripts.continues_fractions as continues_fractions
 import math
 p = 1009
 q = 1013

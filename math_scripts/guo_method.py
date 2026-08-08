@@ -1,4 +1,4 @@
-import continues_fractions
+import math_scripts.continues_fractions as continues_fractions
 import sympy
 import math
 N  = 7067354383
