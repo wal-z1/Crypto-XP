@@ -14,6 +14,7 @@ def gen_shared_secret(P, n):
     S = P*n
     return S.xy()[0]
 
+
 def encrypt_flag(shared_secret: int):
     # Derive AES key from shared secret
     sha1 = hashlib.sha1()
